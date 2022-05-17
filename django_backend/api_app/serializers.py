@@ -20,6 +20,6 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-        model = Branch
+        model = Employee
         fields = '__all__'
 
