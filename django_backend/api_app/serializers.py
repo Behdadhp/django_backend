@@ -16,3 +16,10 @@ class BranchSerializer(serializers.ModelSerializer):
         model = Branch
         fields = '__all__'
 
+class EmployeeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Branch
+        fields = '__all__'
+
