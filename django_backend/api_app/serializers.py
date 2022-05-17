@@ -9,3 +9,10 @@ class VacationSerializer(serializers.ModelSerializer):
         model = Vacation
         fields = '__all__'
 
+class BranchSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Branch
+        fields = '__all__'
+
