@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Vacation
 from django.views import generic
 from .forms import VacationForm
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 
@@ -9,6 +11,7 @@ class VacationCreate(generic.CreateView):
     context_object_name = 'django_backend\api_app\templates\vacation\Vacation_form.html'
     model = Vacation
     form_class = VacationForm
+    success_url = reverse_lazy("vacation:list")
 
     def form_valid(self,form):
         self.object = form.save(commit=False)
