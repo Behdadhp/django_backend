@@ -1,11 +1,11 @@
 from django.urls import path, include
 from api_app import views
-from .views import VacationViewSet
+from .views import VacationViewSet, BranchViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('vacation', VacationViewSet,basename='vacation')
-
+router.register('branch',BranchViewSet,basename='branch')
 app_name = 'vacation'
 
 urlpatterns=[
