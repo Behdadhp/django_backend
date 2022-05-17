@@ -14,3 +14,9 @@ class VacationCreate(generic.CreateView):
         self.object = form.save(commit=False)
         self.object.save()
         return super().form_valid(form)   
+
+
+class VacationList(generic.ListView):
+
+    context_object_name = 'vacation_lists'
+    queryset = Vacation.objects.all().order_by('-start_date')
