@@ -1,18 +1,19 @@
 {% extends "base.html" %} {% block content %}
 
-<table class="table table-striped">
-    <thead>
-      <td>start date</td>
-      <td>end date</td>
-    </thead>
-    {% for item in vacation_lists %}
-    <tr>
-      <td>{{item.start_date}}</td>
-      <td>{{item.end_date}}</td>
-    </tr>
-    {% endfor %}
-  </table>
-
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <td>start date</td>
+        <td>end date</td>
+        </thead>
+        {% for item in vacation_lists %}
+        <tr>
+        <td>{{item.start_date}}</td>
+        <td>{{item.end_date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 
 
 
