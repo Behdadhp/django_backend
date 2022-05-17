@@ -28,28 +28,24 @@ class VacationList(generic.ListView):
     queryset = Vacation.objects.all().order_by('-start_date')
 
 
-
-class VacationViewSet(viewsets.ModelViewSet):
+class BaseAuthViewSet(viewsets.ModelViewSet):
 
     authentication_class = [TokenAuthentication ]
     permission_classes = [IsAuthenticated]
+
+
+class VacationViewSet(BaseAuthViewSet):
 
     serializer_class = VacationSerializer
     queryset = Vacation.objects.all()
 
-class BranchViewSet(viewsets.ModelViewSet):
-
-    authentication_class = [TokenAuthentication ]
-    permission_classes = [IsAuthenticated]
+class BranchViewSet(BaseAuthViewSet):
 
     serializer_class = BranchSerializer
     queryset = Branch.objects.all()
 
 
-class EmployeeViewSet(viewsets.ModelViewSet):
-
-    authentication_class = [TokenAuthentication ]
-    permission_classes = [IsAuthenticated]
+class EmployeeViewSet(BaseAuthViewSet):
 
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
