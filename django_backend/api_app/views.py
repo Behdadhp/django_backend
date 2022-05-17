@@ -6,6 +6,7 @@ from .forms import VacationForm
 # Create your views here.
 
 class VacationCreate(generic.CreateView):
+    context_object_name = 'django_backend\api_app\templates\vacation\Vacation_form.html'
     model = Vacation
     form_class = VacationForm
 
