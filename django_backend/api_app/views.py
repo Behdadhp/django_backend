@@ -8,7 +8,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
 
-from .serializers import VacationSerializer, BranchSerializer
+from .serializers import VacationSerializer, BranchSerializer, EmployeeSerializer
 
 class VacationCreate(generic.CreateView):
     context_object_name = 'django_backend\api_app\templates\vacation\Vacation_form.html'
@@ -44,3 +44,12 @@ class BranchViewSet(viewsets.ModelViewSet):
 
     serializer_class = BranchSerializer
     queryset = Branch.objects.all()
+
+
+class EmployeeViewSet(viewsets.ModelViewSet):
+
+    authentication_class = [TokenAuthentication ]
+    permission_classes = [IsAuthenticated]
+
+    serializer_class = EmployeeSerializer
+    queryset = Employee.objects.all()
